@@ -1,0 +1,20 @@
+#include <iostream>
+#include <sstream>
+#include <string>
+using namespace std;
+int f() {
+    stringstream ss("5+9"); 
+    char op;
+    int num1, num2, result;
+    ss >> num1;
+    while (ss >> op >> num2) {
+        switch (op) {
+            case '+': num1 += num2; break;
+            case '-': num1 -= num2; break;
+            case '*': num1 *= num2; break;
+            case '/': num1 /= num2; break;
+            default: cout << "Неизвестная операция: " << op << endl;
+        }
+    }
+    cout << "Ответ: " << num1 << endl;
+}
